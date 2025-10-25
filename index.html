@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #3b0a45, #7a1e6a, #b3418b);
+      font-family: "Poppins", sans-serif;
+      overflow: hidden;
+    }
+
+    .card {
+      background: #ffd6eb;
+      padding: 40px 30px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+      max-width: 400px;
+      width: 90%;
+      transition: all 0.3s ease;
+    }
+
+    .title {
+      font-family: "Pacifico", cursive;
+      font-size: 36px;
+      color: #d4145a;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      color: #5a3c55;
+      margin-bottom: 25px;
+    }
+
+    .open-btn {
+      background: linear-gradient(90deg, #ff75b5, #ff4596);
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(255, 71, 161, 0.3);
+      transition: transform 0.2s ease;
+    }
+
+    .open-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .revealed {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .revealed.show {
+      display: flex;
+      animation: fadeIn 0.8s ease forwards;
+    }
+
+    .photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 6px solid white;
+      box-shadow: 0 0 20px rgba(255, 192, 203, 0.5);
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .message {
+      font-size: 16px;
+      color: #4a2d47;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 14px 18px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(255, 71, 161, 0.1);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1 class="title">Helow ruhi.</h1>
+    <p class="subtitle">A little surprise — click below 💌</p>
+
+    <div class="closed" id="closed">
+      <button class="open-btn" id="openBtn">Open</button>
+    </div>
+
+    <div class="revealed" id="revealed">
+      <div class="photo">
+        <!-- Replace her.jpg with her photo -->
+        <img src="her.jpg" alt="Her photo">
+      </div>
+      <div class="message">
+        Hey<br><br>
+        ye wali photo mere pass kafi time se he . May be tu smjh gayi ki tere liye itni mehnat kisne kari he . Or ab tujhe pata he kya karna he . or to or tere jaise pehli ldki dekhi mene jo kisi ke bhi kehne par block kar deti he 
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const openBtn = document.getElementById("openBtn");
+    const revealed = document.getElementById("revealed");
+    const closed = document.getElementById("closed");
+
+    openBtn.addEventListener("click", () => {
+      closed.style.display = "none";
+      revealed.classList.add("show");
+    });
+  </script>
+</body>
+</html>
